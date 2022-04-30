@@ -1,0 +1,13 @@
+K 10
+svn:author
+V 8
+ubuntu20
+K 8
+svn:date
+V 27
+2022-04-30T04:55:20.261467Z
+K 7
+svn:log
+V 101
+nothing only trying to keep cmake add_definition jumping targeting execution variable(not madeJUST..)
+END

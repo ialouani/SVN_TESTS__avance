@@ -1,0 +1,128 @@
+        -:    0:Source:hash.c
+        -:    0:Graph:hash.gcno
+        -:    0:Data:hash.gcda
+        -:    0:Runs:1
+        -:    1:#include <assert.h>
+        -:    2:#include <stdlib.h>
+        -:    3:#include <stdio.h>
+        -:    4:#include "hash.h"
+        -:    5:
+        -:    6://#ifndef HASH_H
+        -:    7:#define HASH_SIZE 13 // prime number
+        -:    8://#endif
+        -:    9://modularite (changer les fonctionnalitees sans toucher aux sources)
+        -:   10:
+        -:   11://double linked generic list
+        -:   12:struct Cell {
+        -:   13:  void *data;//plusieurs choses comme contenu des listes 
+        -:   14:  //donc on peut pas le typer=>void*(polymorphe) pour designer Cell.data.
+        -:   15:  struct Cell *next,*prev;
+        -:   16:};//encodage de la liste chainee via cette structure.(doublement chainee)
+        -:   17:
+        -:   18://M-x replace string avec curseur tout en haut pour remplacer toutes
+        -:   19://les occurences d'elements voulus pour respecter la convention de nommage
+        -:   20://définie dans le fichier de type Markdown (modele de balises HTML)
+        -:   21://::README.md.
+        -:   22:
+        -:   23://main hash table.
+        -:   24:struct hash_Table{
+        -:   25:  int (*cmp)(void *,void *);
+        -:   26:  int (*hash)(void *);
+        -:   27:  struct Cell **entry;
+        -:   28:  int size;
+        -:   29:};
+        -:   30:
+        3:   31:struct Cell *hash_newcell(void *data){
+        3:   32:  struct Cell *c=malloc(sizeof(*c));
+        3:   33:  c->data=data;
+        3:   34:  c->next=c->prev=NULL;
+        3:   35:  return c;
+        -:   36:}
+        -:   37:
+        1:   38:struct hash_Table *hash_init(int (*cmp)(void *,void *), int (*hash)(void *)){
+        -:   39:  //arguments de type pointeurs de fonctions.
+        -:   40:  //une fonction f et un main dans un meme fichier => meme zone
+        -:   41:  //d'adressages du processus en cours comparant avec printf
+        -:   42:  //qui se trouve dans une bibliotheque dynamique
+        -:   43:  //qui est chargée à l'éxecution.(un lien est crée vers l'executable
+        -:   44:  //.o contenant le symbole "printf" manquant)
+        -:   45:  struct hash_Table *hasht;
+        -:   46:  int i;
+       1*:   47:  assert(cmp!=NULL);
+       1*:   48:  assert(hash!=NULL); 
+        1:   49:  hasht = malloc(sizeof(*hasht));//remplacer les char par des short int
+        -:   50:  //conserve la conherence par le sizeof(*HASHT).
+        -:   51:  //query-replace.(pour respecter la convention de nommage)
+       1*:   52:  if (hasht==NULL) return NULL;
+        1:   53:  hasht->cmp=cmp;
+        1:   54:  hasht->hash=hash;
+        1:   55:  hasht->entry=malloc(sizeof(*(hasht->entry))*HASH_SIZE);
+        1:   56:  if (hasht->entry==NULL){
+    #####:   57:    free(hasht);
+    #####:   58:    return NULL;
+        -:   59:  }
+        1:   60:  hasht->size=HASH_SIZE;
+       14:   61:  for(i=0;i<hasht->size;++i) hasht->entry[i]=NULL;
+        1:   62:  return hasht;
+        -:   63:}
+        -:   64:
+        3:   65:int hash_add(struct hash_Table *hash,void *data){
+        -:   66:  int value;
+        -:   67:  int c;
+        3:   68:  struct Cell *cell=hash_newcell(data);
+       3*:   69:  assert(hash!=NULL);
+        3:   70:  value=hash->hash(data);  
+        3:   71:  fprintf(stderr,"DEBUG: hash value is %d \n",value);
+        3:   72:  if (hash->entry[value%hash->size]==NULL){
+        2:   73:    hash->entry[value%hash->size]=cell;
+        -:   74:  } else {
+        1:   75:    struct Cell *q=NULL,*p=hash->entry[value%hash->size];
+        1:   76:    while((p!=NULL) && ((c=hash->cmp(data,p->data))>0)){
+    #####:   77:      q=p;
+    #####:   78:      p=p->next;    
+        -:   79:    }
+        1:   80:    if (c==0)
+        1:   81:	return 1; // element is already in the table
+    #####:   82:    if (q==NULL){
+    #####:   83:      p->prev=cell; cell->next=p;
+    #####:   84:      hash->entry[value%hash->size]=cell;
+        -:   85:    }else{
+    #####:   86:      q->next = cell; cell->prev=q;
+        -:   87:    } 
+        -:   88:  }
+        2:   89:  return 0;
+        -:   90:}
+        -:   91:
+        3:   92:int hash_cherche(struct hash_Table *hash,void *data){
+        3:   93:  int r=1,value;
+       3*:   94:  assert(hash!=NULL);
+        3:   95:  value=hash->hash(data);  
+        3:   96:  struct Cell *p=hash->entry[value%hash->size];
+        4:   97:  while((p!=NULL) && (r=hash->cmp(data,p->data)<0))
+        1:   98:    p=p->next;
+        3:   99:  if (r==0) return 0;
+        1:  100:  if (p==NULL) return 1;
+    #####:  101:  return 1;
+        -:  102:}
+        -:  103:
+        1:  104:void hash_free(struct hash_Table *hash, void (*release)(void *)){
+        -:  105:  int i;
+       1*:  106:  assert(hash!=NULL);
+       14:  107:  for(i=0;i<hash->size;++i){
+       13:  108:    struct Cell *p=hash->entry[i];
+       13:  109:    if (p==NULL) continue;
+        2:  110:    while(p->next!=NULL){
+    #####:  111:      p=p->next;
+    #####:  112:      if (release!=NULL)
+    #####:  113:	release(p->prev->data);
+    #####:  114:      free(p->prev);
+        -:  115:    }
+        -:  116:  }
+        1:  117:  free(hash->entry);
+        1:  118:  free(hash);    
+        1:  119:}
+        -:  120:
+        -:  121:
+    #####:  122:int hashRemove(struct hash_Table* hash, void* data){
+    #####:  123:  return 0;
+        -:  124:}//ne fait rien ..1 ..2 .._all__.///////

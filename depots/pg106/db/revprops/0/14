@@ -1,0 +1,13 @@
+K 10
+svn:author
+V 8
+ubuntu20
+K 8
+svn:date
+V 27
+2022-04-30T04:42:25.301184Z
+K 7
+svn:log
+V 190
+gcc --coverage -fPIC -shared -o libhash.so hash.c puis gcc -c example.c puis gcc -o example example.c -lhash -L. apres LD_LIBRARY_PATH manipulations(3) puis gcov hash.c puis less hash.c.gcov
+END
