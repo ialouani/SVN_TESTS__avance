@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<assert.h>
+#include<hash.h>
+#include<stdint.h> //for the type cast: intptr_ si on met dans un reservoir int
+//pour cela plus que sa place .///
+
+void test_init(){
+  struct hash_Table *t=NULL;
+  t=hash_init(NULL,NULL);
+  assert(t==NULL);
+}
+
+
+int main(){
+  //assert(false && "mon premier test");
+  test_init();
+  return 0;
+}

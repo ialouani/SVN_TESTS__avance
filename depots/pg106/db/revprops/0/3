@@ -1,0 +1,13 @@
+K 10
+svn:author
+V 8
+ubuntu20
+K 8
+svn:date
+V 27
+2022-04-30T03:05:14.627230Z
+K 7
+svn:log
+V 124
+development now in branches and after __yes tests__ rslt in branch/test_hash ; repatriating all this in trunk svn repository
+END

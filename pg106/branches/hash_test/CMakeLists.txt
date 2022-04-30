@@ -1,0 +1,11 @@
+cmake_minimum_required (VERSION 2.8.11)
+
+project(HASH)
+
+
+enable_testing()
+
+add_subdirectory(hash)
+add_subdirectory(demo)
+
+add_subdirectory(tests)

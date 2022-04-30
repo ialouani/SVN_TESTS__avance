@@ -1,0 +1,13 @@
+K 10
+svn:author
+V 8
+ubuntu20
+K 8
+svn:date
+V 27
+2022-04-30T03:30:23.879085Z
+K 7
+svn:log
+V 106
+first unitary test for automation test (functions/specifications) by make test after no MAKEFILE BUT CMAKE
+END

@@ -1,0 +1,4 @@
+add_executable(hash_unit hash_unit_tests.c)
+target_link_libraries(hash_unit LINK_PUBLIC hash_static)
+
+add_test(unit hash_unit)
