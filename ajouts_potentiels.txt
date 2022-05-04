@@ -1,0 +1,10 @@
+make doc=>cmake comment ??
+
+install aussi pour des libraries sans passer par un making librairie '' dans le cmake des sources.(target cmake building)
+
+LES 2 POINTS SONT A MATRISER.(et a quoi sert le deuxieme a la place de faire des librairies comme on avait lhabitude de faire et en quoi cela ne change pas le comportement au final et bien tout simplement on pourrait repondre des maintenant car on les cree dans le cmake principal avec include_directories ${CMAKE_SOURCES_DOR}/src dans le cmakelists du fichier des tests: demo)
+
+C'est juste le linkage avec make install apres qui passerait et fera lerreur en cas de non precision ou on veut repertorier les sources sinon un make puis un make doc fera lessentiel tout en ajoutant les executables (add_subdirectory->add_executable) mais sans installer les libraries(en anglais) c'est chouette car rappel3/5:: on a pas d'option des le building out-source systeme de compilation sans choix de repertoriage automatique des sources.
+
+
+=>A mettre en oeuvre!
