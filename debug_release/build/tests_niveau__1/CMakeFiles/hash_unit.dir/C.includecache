@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu20/Bureau/TD7__2/SVN_TESTS__avance/debug_release/tests_niveau__1/../hash_sources/hash.h
+
+/home/ubuntu20/Bureau/TD7__2/SVN_TESTS__avance/debug_release/tests_niveau__1/hash_unit.c
+assert.h
+-
+stdbool.h
+-
+stdlib.h
+-
+../hash_sources/hash.h
+/home/ubuntu20/Bureau/TD7__2/SVN_TESTS__avance/debug_release/tests_niveau__1/../hash_sources/hash.h
+string.h
+-
+

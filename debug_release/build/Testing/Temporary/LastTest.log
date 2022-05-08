@@ -1,0 +1,33 @@
+Start testing: May 08 03:11 +01
+----------------------------------------------------------
+1/2 Testing: tests_unitaires__one
+1/2 Test: tests_unitaires__one
+Command: "/home/ubuntu20/Bureau/TD7__2/SVN_TESTS__avance/debug_release/build/tests_niveau__1/hash_unit" "unit"
+Directory: /home/ubuntu20/Bureau/TD7__2/SVN_TESTS__avance/debug_release/build/tests_niveau__1
+"tests_unitaires__one" start time: May 08 03:11 +01
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"tests_unitaires__one" end time: May 08 03:11 +01
+"tests_unitaires__one" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: tests_unitaires__two
+2/2 Test: tests_unitaires__two
+Command: "/home/ubuntu20/Bureau/TD7__2/SVN_TESTS__avance/debug_release/build/tests_niveau__1/hash_unit" "NULL"
+Directory: /home/ubuntu20/Bureau/TD7__2/SVN_TESTS__avance/debug_release/build/tests_niveau__1
+"tests_unitaires__two" start time: May 08 03:11 +01
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"tests_unitaires__two" end time: May 08 03:11 +01
+"tests_unitaires__two" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 08 03:11 +01
