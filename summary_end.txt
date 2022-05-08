@@ -1,0 +1,12 @@
+add_defintion after cmake_modules extern configuration.
+make INSTALL important from the next TD.
+make doc && make for different type's builds made.
+Doxyfile.in and modifications known.
+RESTE:
+make install le plus du td suivant.
+AVEC valgrind aussi.
+-2
++2: car anticipation sur:
+make doc
+make coverage++ 2ieme mathode avec les cmake_modules ../.
+ET voila.

@@ -1,0 +1,1 @@
+/usr/bin/cc  -g    CMakeFiles/hash_unit.dir/hash_unit.c.o  -o hash_unit -rdynamic ../hash_sources/libhash_static.a 

@@ -1,0 +1,112 @@
+\hypertarget{hash_8c}{}\doxysection{/home/ubuntu20/\+Bureau/\+T\+D7\+\_\+\+\_\+\+D\+E\+R\+N\+I\+E\+R/\+S\+V\+N\+\_\+\+T\+E\+S\+T\+S\+\_\+\+\_\+avance/debug\+\_\+release/hash\+\_\+sources/hash.c File Reference}
+\label{hash_8c}\index{/home/ubuntu20/Bureau/TD7\_\_DERNIER/SVN\_TESTS\_\_avance/debug\_release/hash\_sources/hash.c@{/home/ubuntu20/Bureau/TD7\_\_DERNIER/SVN\_TESTS\_\_avance/debug\_release/hash\_sources/hash.c}}
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hash.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCell}{Cell}}
+\begin{DoxyCompactList}\small\item\em describing the main cell double chained list data contains void$\ast$ pointer \textquotesingle{}value\textquotesingle{} and classic prev and next adress points to the double extremities of the encapsulation D\+A\+TA. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHashTable}{Hash\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{hash_8c_ad6074dd11ab3c97c8135c43aab03ae95}{H\+A\+S\+H\+\_\+\+S\+I\+ZE}}~13
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCell}{Cell}} $\ast$ \mbox{\hyperlink{hash_8c_ab630df0020741f74ef2102fed9591024}{hash\+New\+Cell}} (void $\ast$data)
+\item 
+struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$ \mbox{\hyperlink{hash_8c_af475d28b297317b8ae776aa9f3c8f0ed}{hash\+Init}} (int($\ast$cmp)(void $\ast$, void $\ast$), int($\ast$hash)(void $\ast$))
+\item 
+int \mbox{\hyperlink{hash_8c_a6ae3255383bb94544e59139e23ac1120}{hash\+Add}} (struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$hash, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em hash\+Add Add a new data into the hash table \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{hash_8c_ae69cab507d3cfd8bd2d8354855daf515}{hash\+Search}} (struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$hash, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em hash\+Search search for a data into the hash table \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash_8c_aab5e08318be2268f08f72690ee5cf3af}{hash\+Free}} (struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$hash, void($\ast$release)(void $\ast$))
+\begin{DoxyCompactList}\small\item\em hash\+Free \+: free all data stored into the hash table \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{hash_8c_ad6074dd11ab3c97c8135c43aab03ae95}\label{hash_8c_ad6074dd11ab3c97c8135c43aab03ae95}} 
+\index{hash.c@{hash.c}!HASH\_SIZE@{HASH\_SIZE}}
+\index{HASH\_SIZE@{HASH\_SIZE}!hash.c@{hash.c}}
+\doxysubsubsection{\texorpdfstring{HASH\_SIZE}{HASH\_SIZE}}
+{\footnotesize\ttfamily \#define H\+A\+S\+H\+\_\+\+S\+I\+ZE~13}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hash_8c_a6ae3255383bb94544e59139e23ac1120}\label{hash_8c_a6ae3255383bb94544e59139e23ac1120}} 
+\index{hash.c@{hash.c}!hashAdd@{hashAdd}}
+\index{hashAdd@{hashAdd}!hash.c@{hash.c}}
+\doxysubsubsection{\texorpdfstring{hashAdd()}{hashAdd()}}
+{\footnotesize\ttfamily int hash\+Add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$}]{hash,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+hash\+Add Add a new data into the hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash_8c_aab5e08318be2268f08f72690ee5cf3af}\label{hash_8c_aab5e08318be2268f08f72690ee5cf3af}} 
+\index{hash.c@{hash.c}!hashFree@{hashFree}}
+\index{hashFree@{hashFree}!hash.c@{hash.c}}
+\doxysubsubsection{\texorpdfstring{hashFree()}{hashFree()}}
+{\footnotesize\ttfamily void hash\+Free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$}]{hash,  }\item[{void($\ast$)(void $\ast$)}]{release }\end{DoxyParamCaption})}
+
+
+
+hash\+Free \+: free all data stored into the hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & \\
+\hline
+{\em release} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash_8c_af475d28b297317b8ae776aa9f3c8f0ed}\label{hash_8c_af475d28b297317b8ae776aa9f3c8f0ed}} 
+\index{hash.c@{hash.c}!hashInit@{hashInit}}
+\index{hashInit@{hashInit}!hash.c@{hash.c}}
+\doxysubsubsection{\texorpdfstring{hashInit()}{hashInit()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structHashTable}{Hash\+Table}}$\ast$ hash\+Init (\begin{DoxyParamCaption}\item[{int($\ast$)(void $\ast$, void $\ast$)}]{cmp,  }\item[{int($\ast$)(void $\ast$)}]{hash }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{hash_8c_ab630df0020741f74ef2102fed9591024}\label{hash_8c_ab630df0020741f74ef2102fed9591024}} 
+\index{hash.c@{hash.c}!hashNewCell@{hashNewCell}}
+\index{hashNewCell@{hashNewCell}!hash.c@{hash.c}}
+\doxysubsubsection{\texorpdfstring{hashNewCell()}{hashNewCell()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structCell}{Cell}}$\ast$ hash\+New\+Cell (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{hash_8c_ae69cab507d3cfd8bd2d8354855daf515}\label{hash_8c_ae69cab507d3cfd8bd2d8354855daf515}} 
+\index{hash.c@{hash.c}!hashSearch@{hashSearch}}
+\index{hashSearch@{hashSearch}!hash.c@{hash.c}}
+\doxysubsubsection{\texorpdfstring{hashSearch()}{hashSearch()}}
+{\footnotesize\ttfamily int hash\+Search (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$}]{hash,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+hash\+Search search for a data into the hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & pointer to a valid hash table created using hash\+Init \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if element is found 
+\end{DoxyReturn}

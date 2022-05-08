@@ -1,0 +1,84 @@
+\hypertarget{hash_8h}{}\doxysection{/home/ubuntu20/\+Bureau/\+T\+D7\+\_\+\+\_\+\+D\+E\+R\+N\+I\+E\+R/\+S\+V\+N\+\_\+\+T\+E\+S\+T\+S\+\_\+\+\_\+avance/debug\+\_\+release/hash\+\_\+sources/hash.h File Reference}
+\label{hash_8h}\index{/home/ubuntu20/Bureau/TD7\_\_DERNIER/SVN\_TESTS\_\_avance/debug\_release/hash\_sources/hash.h@{/home/ubuntu20/Bureau/TD7\_\_DERNIER/SVN\_TESTS\_\_avance/debug\_release/hash\_sources/hash.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$ \mbox{\hyperlink{hash_8h_af475d28b297317b8ae776aa9f3c8f0ed}{hash\+Init}} (int($\ast$cmp)(void $\ast$, void $\ast$), int($\ast$hash)(void $\ast$))
+\item 
+int \mbox{\hyperlink{hash_8h_a6ae3255383bb94544e59139e23ac1120}{hash\+Add}} (struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$hash, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em hash\+Add Add a new data into the hash table \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{hash_8h_ae69cab507d3cfd8bd2d8354855daf515}{hash\+Search}} (struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$hash, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em hash\+Search search for a data into the hash table \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash_8h_aab5e08318be2268f08f72690ee5cf3af}{hash\+Free}} (struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$hash, void($\ast$release)(void $\ast$))
+\begin{DoxyCompactList}\small\item\em hash\+Free \+: free all data stored into the hash table \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ceci est la documentation du module hash \hypertarget{hash_8h_Description}{}\doxysubsection{générale}\label{hash_8h_Description}
+blablabla \hypertarget{hash_8h_Complexité}{}\doxysubsection{Complexité}\label{hash_8h_Complexité}
+blabblablbla 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hash_8h_a6ae3255383bb94544e59139e23ac1120}\label{hash_8h_a6ae3255383bb94544e59139e23ac1120}} 
+\index{hash.h@{hash.h}!hashAdd@{hashAdd}}
+\index{hashAdd@{hashAdd}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{hashAdd()}{hashAdd()}}
+{\footnotesize\ttfamily int hash\+Add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$}]{hash,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+hash\+Add Add a new data into the hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash_8h_aab5e08318be2268f08f72690ee5cf3af}\label{hash_8h_aab5e08318be2268f08f72690ee5cf3af}} 
+\index{hash.h@{hash.h}!hashFree@{hashFree}}
+\index{hashFree@{hashFree}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{hashFree()}{hashFree()}}
+{\footnotesize\ttfamily void hash\+Free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$}]{hash,  }\item[{void($\ast$)(void $\ast$)}]{release }\end{DoxyParamCaption})}
+
+
+
+hash\+Free \+: free all data stored into the hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & \\
+\hline
+{\em release} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash_8h_af475d28b297317b8ae776aa9f3c8f0ed}\label{hash_8h_af475d28b297317b8ae776aa9f3c8f0ed}} 
+\index{hash.h@{hash.h}!hashInit@{hashInit}}
+\index{hashInit@{hashInit}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{hashInit()}{hashInit()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structHashTable}{Hash\+Table}}$\ast$ hash\+Init (\begin{DoxyParamCaption}\item[{int($\ast$)(void $\ast$, void $\ast$)}]{cmp,  }\item[{int($\ast$)(void $\ast$)}]{hash }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{hash_8h_ae69cab507d3cfd8bd2d8354855daf515}\label{hash_8h_ae69cab507d3cfd8bd2d8354855daf515}} 
+\index{hash.h@{hash.h}!hashSearch@{hashSearch}}
+\index{hashSearch@{hashSearch}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{hashSearch()}{hashSearch()}}
+{\footnotesize\ttfamily int hash\+Search (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structHashTable}{Hash\+Table}} $\ast$}]{hash,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+hash\+Search search for a data into the hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & pointer to a valid hash table created using hash\+Init \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if element is found 
+\end{DoxyReturn}
